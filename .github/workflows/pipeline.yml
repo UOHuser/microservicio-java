@@ -18,3 +18,8 @@ jobs:
 
         run: |
           echo "hola mundo"
+      - name: SonarCloud Analysis
+        run: |
+          chmod +x gradlew 
+          ./gradlew build sonar -Dsonar.token=${{ secrets.DEVOPS-LAB }}
+
