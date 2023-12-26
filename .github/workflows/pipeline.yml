@@ -8,18 +8,17 @@ on:
 jobs:
 
   build:
-  
+
     runs-on: ubuntu-latest
-    
-    steps:  
+
+    steps:
+
       - uses: actions/checkout@v3
 
       - name: Run a multi-line script
-
         run: |
-          echo "hola mundo"
+          echo "Hola Mundo Test"
       - name: SonarCloud Analysis
         run: |
-          chmod +x gradlew 
-          ./gradlew build sonar -Dsonar.token=$TOKEN_LAB
-
+          chmod +x gradlew
+          ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONAR_CLOUD }}
