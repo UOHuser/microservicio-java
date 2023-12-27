@@ -23,7 +23,7 @@ sonar {
     property "sonar.projectKey", "UOHuser_microservicio-java"
     property "sonar.organization", "uohuser"
     property "sonar.host.url", "https://sonarcloud.io/"
-    property "sonar.projectName", ""
+    property "sonar.projectName", "test"
 
   }
 }
