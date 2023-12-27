@@ -20,5 +20,5 @@ jobs:
           echo "Hola Mundo Test"
       - name: SonarCloud Analysis
         run: |
-          chmod +rwx gradlew
+          chmod +x gradlew
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONAR_CLOUD }}
