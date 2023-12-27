@@ -24,7 +24,6 @@ sonar {
     property "sonar.organization", "devopslabuoh"
     property "sonar.host.url", "https://sonarcloud.io/"
     property "sonar.projectName", "microservicio-java"
-
   }
 }
 
