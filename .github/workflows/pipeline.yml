@@ -25,9 +25,6 @@ jobs:
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_LAB_JAVA }}
           
       - name: Generate Jacoco Coverage Report
-  	    run: | 
-          chmod +x gradlew
-          ./gradlew jacocoTestReport
 
       - name: SonarQube Quality Gate Check
         id: sonarqube-quality-gate-check
