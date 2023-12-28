@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: jacoco-report
-          path: build/jacocoHtml
+          path: build/reports/jacoco/test/jacocoTestReport.xml
 
       - name: SonarCloud Analysis
         run: |
