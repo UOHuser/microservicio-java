@@ -32,6 +32,8 @@ task buildJar(type: Jar) {
   archiveFileName = "microservicio-java.jar"
 }
 
+build.dependsOn buildJar
+
 test {
 	useJUnitPlatform()
 }
