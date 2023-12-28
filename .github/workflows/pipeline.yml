@@ -19,6 +19,12 @@ jobs:
         run: |
           echo "Hola Mundo Test"
 
+      - name: Upload Jacoco report
+        uses: actions/upload-artifact@v2
+        with:
+          name: jacoco-report
+          path: build/jacocoHtml
+
       - name: SonarCloud Analysis
         run: |
           chmod +x gradlew
