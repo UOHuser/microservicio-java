@@ -25,7 +25,14 @@ jobs:
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_LAB_JAVA }}
           echo "::set-output name=report-file::build/sonar/report-task.txt"
 
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.TOKEN_LAB_JAVA }}
+          SONAR_HOST_URL: https://sonarcloud.io
+
       - name: SonarQube Quality Gate Check
+        id: sonarqube-quality-gate-check
         uses: sonarsource/sonarqube-quality-gate-action@master
         env: 
           organization: devopslabuoh
