@@ -19,12 +19,6 @@ jobs:
         run: |
           echo "Hola Mundo Test"
 
-      - name: Upload Jacoco report
-        uses: actions/upload-artifact@v2
-        with:
-          name: jacoco-report
-          path: build/jacocoHtml
-
       - name: SonarCloud Analysis
         run: |
           chmod +x gradlew
@@ -41,3 +35,9 @@ jobs:
           wait-for-quality-gate: true
         with: 
           scanMetadataReportFile: build/sonar/report-task.txt
+          
+      - name: Upload Jacoco report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report
+          path: build/jacocoHtml
