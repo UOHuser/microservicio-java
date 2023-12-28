@@ -28,15 +28,14 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_LAB_JAVA }}
-        env:
-          SONAR_ANALISYS_MODE: 'preview'
-          SONAR_QUALITYGATE: 'Cobertura'
-
+          
       - name: SonarQube Quality Gate Check
         uses: sonarsource/sonarqube-quality-gate-action@master
         env: 
           SONAR_TOKEN: ${{ secrets.TOKEN_LAB_JAVA }}
           SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_QUALITYGATE: 'Cobertura'
+          wait-for-quality-gate: true
         with: 
           scanMetadataReportFile: build/sonar/report-task.txt
 
