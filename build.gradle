@@ -31,6 +31,16 @@ jacocoTestReport {
     }
 }
 
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.85  // Cambia este valor según tu requisito de cobertura
+            }
+        }
+    }
+}
+
 sonar {
   properties {
     property "sonar.projectKey", "UOHuser_microservicio-java"
