@@ -42,7 +42,7 @@ jar {
         attributes 'Main-Class': 'com.example.testingweb.TestingWebApplication' // Reemplaza 'com.example.MainClass' con la clase principal de tu proyecto
     }
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
 
