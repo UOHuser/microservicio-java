@@ -27,6 +27,11 @@ sonar {
   }
 }
 
+task buildJar(type: Jar) {
+  from sourceSets.main.output 
+  archiveFileName = "microservicio-java.jar"
+}
+
 test {
 	useJUnitPlatform()
 }
