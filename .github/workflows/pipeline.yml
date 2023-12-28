@@ -40,7 +40,6 @@ jobs:
           scanMetadataReportFile: build/sonar/report-task.txt
 
       - name: Build Docker image
-        run: |
-          docker build --build-arg JAR_FILE=build/libs/*.jar -t myapp:latest
+        run: docker build --build-arg JAR_FILE=build/libs/*.jar -t myapp:latest
 
       
