@@ -28,7 +28,9 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_LAB_JAVA }}
-          
+        env:
+          SONAR_ANALISYS_MODE: 'preview'
+          SONAR_QUALITYGATE: 'Cobertura'
 
       - name: SonarQube Quality Gate Check
         uses: sonarsource/sonarqube-quality-gate-action@master
