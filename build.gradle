@@ -37,6 +37,12 @@ jacocoTestCoverageVerification {
     }
 }
 
+task copyFiles(type: Copy) {
+    from 'src/main/java'
+    into 'build/libs'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE 
+}
+
 configurations {
     runtimeClasspath {
         extendsFrom implementation
