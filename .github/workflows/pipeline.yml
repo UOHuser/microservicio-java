@@ -18,17 +18,14 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "Hola Mundo Test"
-      
-      - name: Upload Jacoco report
-        uses: actions/upload-artifact@v3
-        with:
-          name: jacoco-report
-          path: build/reports/jacoco/test/jacocoTestReport.xml
 
       - name: SonarCloud Analysis
         run: |
           chmod +x gradlew
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_LAB_JAVA }}
+          
+      - name: Generate Jacoco Coverage Report
+  	    run: ./gradlew jacocoTestReport
 
       - name: SonarQube Quality Gate Check
         id: sonarqube-quality-gate-check
