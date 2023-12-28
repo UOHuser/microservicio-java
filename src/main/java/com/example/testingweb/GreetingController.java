@@ -12,6 +12,15 @@ public class GreetingController {
 
 	public GreetingController(GreetingService service) {
 		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
+		String passwd = "123456";
 		this.service = service;
 	}
 
