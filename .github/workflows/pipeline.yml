@@ -19,6 +19,11 @@ jobs:
         run: |
           echo "Hola Mundo Test"
 
+      - name: Generate Jacoco Coverage Report
+        run: |
+          chmod +x gradlew
+          ./gradlew jacocoTestReport
+
       - name: SonarCloud Analysis
         run: |
           chmod +x gradlew
@@ -34,9 +39,5 @@ jobs:
           SONAR_HOST_URL: https://sonarcloud.io
         with: 
           scanMetadataReportFile: build/sonar/report-task.txt
-      
-      - name: Generate Jacoco Coverage Report
-        run: |
-          chmod +x gradlew
-          ./gradlew jacocoTestReport
+
       
