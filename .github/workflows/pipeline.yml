@@ -15,10 +15,11 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - name: build gradlew
+      - name: build gradle
         run: |
           chmod +x gradlew
           ./gradlew build
+          ls -ltr
 
       - name: Generate Jacoco Coverage Report
         run: |
