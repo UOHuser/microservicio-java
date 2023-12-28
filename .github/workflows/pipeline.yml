@@ -23,3 +23,15 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_LAB_JAVA }}
+          echo "::set-output name=report-file::build/sonar/report-task.txt"
+
+      - name: SonarQube Quality Gate Check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        env: 
+          organization: devopslabuoh
+          project: UOHuser_microservicio-java
+          SONAR_TOKEN: ${{ secrets.TOKEN_LAB_JAVA }}
+          SONAR_HOST_URL: https://sonarcloud.io
+          wait-for-quality-gate: true
+        with: 
+          scanMetadataReportFile: ${{ steps.SonarCloudAnalysis.outputs.report-file }}
