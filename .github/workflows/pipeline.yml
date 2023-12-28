@@ -31,14 +31,10 @@ jobs:
           
 
       - name: SonarQube Quality Gate Check
-        id: sonarqube-quality-gate-check
         uses: sonarsource/sonarqube-quality-gate-action@master
         env: 
-          organization: devopslabuoh
-          project: UOHuser_microservicio-java
           SONAR_TOKEN: ${{ secrets.TOKEN_LAB_JAVA }}
           SONAR_HOST_URL: https://sonarcloud.io
-          wait-for-quality-gate: true
         with: 
           scanMetadataReportFile: build/sonar/report-task.txt
 
