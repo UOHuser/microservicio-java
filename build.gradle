@@ -10,14 +10,6 @@ jacoco {
     toolVersion = "0.8.7"
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-        html.destination file("${buildDir}/jacocoHtml")
-    }
-}
-
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -39,6 +31,15 @@ sonar {
     property "sonar.projectName", "microservicio-java"
     property 'sonar.coverage.jacoco.xmlReportPaths', "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
   }
+}
+
+jacocoTestReport {
+  dependsOn test
+    reports {
+        xml.enabled true
+        html.enabled true
+        html.destination file("${buildDir}/jacocoHtml")
+    }
 }
 
 test {
