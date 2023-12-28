@@ -11,6 +11,7 @@ public class GreetingController {
 	private final GreetingService service;
 
 	public GreetingController(GreetingService service) {
+		String password = '123456'
 		this.service = service;
 	}
 
