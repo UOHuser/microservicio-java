@@ -15,9 +15,10 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - name: Run a multi-line script
+      - name: build gradlew
         run: |
-          echo "Hola Mundo Test"
+          chmod +x gradlew
+          ./gradlew build
 
       - name: Generate Jacoco Coverage Report
         run: |
