@@ -19,12 +19,6 @@ jobs:
         run: |
           echo "Hola Mundo Test"
 
-      - name: Set up JDK 8
-        uses: actions/setup-java@v2
-        with: 
-          java-version: '8'
-          distribution: 'adopt'
-
       - name: SonarCloud Analysis
         run: |
           chmod +x gradlew
