@@ -38,8 +38,4 @@ jobs:
           wait-for-quality-gate: true
         with: 
           scanMetadataReportFile: build/sonar/report-task.txt
-
-      - name: Build Docker image
-        run: docker build --build-arg JAR_FILE=build/libs/*.jar -t myapp:latest
-
       
