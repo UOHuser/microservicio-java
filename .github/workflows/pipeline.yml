@@ -39,4 +39,7 @@ jobs:
         with: 
           scanMetadataReportFile: build/sonar/report-task.txt
 
+      - name: Copiar JAR generado
+        run: cp build/libs/*.jar microservicio.jar
+
       
