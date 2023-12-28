@@ -19,15 +19,16 @@ jobs:
         run: |
           echo "Hola Mundo Test"
 
+      - name: Generate Jacoco Coverage Report
+        run: |
+          ./gradlew jacocoTestReport
+          
       - name: SonarCloud Analysis
         run: |
           chmod +x gradlew
           ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_LAB_JAVA }}
           
-      - name: Generate Jacoco Coverage Report
-        run: |
-          ./gradlew jacocoTestReport
-          
+
       - name: SonarQube Quality Gate Check
         id: sonarqube-quality-gate-check
         uses: sonarsource/sonarqube-quality-gate-action@master
