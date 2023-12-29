@@ -52,3 +52,12 @@ jobs:
           cp $GITHUB_WORKSPACE/build/libs/*.jar .
           chmod 777 *.jar
           ls -lt 
+    
+      - name: Docker Build
+        run: | 
+          docker build --tag dockeruser701/useruoh:latest .
+          docker images
+
+      - name: Docker Push
+        run: |
+          docker push dockeruser701/useruoh 
