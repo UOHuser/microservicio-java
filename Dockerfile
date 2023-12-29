@@ -2,6 +2,6 @@ FROM openjdk:8-jre
 
 EXPOSE 8080
 
-ADD *.jar /app/*.jar
+ADD *.jar /app/testing-web-0.0.1.jar
 
-CMD java -jar *.jar
+CMD java -jar testing-web-0.0.1.jar
